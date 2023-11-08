@@ -84,7 +84,7 @@
         <p style="
             text-transform: capitalize;
         ">
-            <i>text-transform: capitalize;</i> -> az 1. betüket naggya teszi
+            <i>text-transform: capitalize;</i> -> az 1. betüket naggya teszi <br><br>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
             Aenean commodo ligula eget dolor. <strong>Aenean massa.</strong> Cum sociis natoque penatibus 
             et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, 
@@ -93,11 +93,13 @@
         </p>
 
         <hr>
-        <p style="
-            border: 10px solid blue;
-            color: black;
+        <p style="               
+            color: blue;
+            border: 10px solid currentColor;
         ">  
-            Megnezni h mivel lesz a szöveg szine ugyanolyan, mint a kerete (18:40 körül)!
+            0:40 körül<br>
+            color: blue; <br>
+            border: 10px solid <b>currentColor</b>; -> a currentColor ugyanolyan szinüve teszi a keretet, mint amit a color-nal megadtunk
             <br>
             <br>
             Vmi görgetessel is lehet a szint valtani DevTool-ban
@@ -115,16 +117,14 @@
         ">  
             Szink kivalasztasara lehetösegek:
             hex, rgb() függveny, hsl() függveny, DevTool-ban vizualisan
-         </p>
+        </p>
 
-         <hr>
-
-
-         
+        <hr>
+        <!-- -------------------- -->
         <h1 style="
             text-shadow: 2px 2px 5px black;
         "
-        >Arnyekolas, egyeb effektek (18:48)</h1>
+        >Arnyekolas, egyeb effektek (0:48 körül)</h1>
 
 
         <h1 style="
@@ -136,56 +136,245 @@
             text-shadow: 0px 0px 5px cyan, 0px 0px 15px red;
         "
         >Ragyogás halmozása</h1>
+        <p>text-shadow: 0px 0px 5px cyan, 0px 0px 15px red;</p>
 
         <hr>
-
-        <h1>Filter</h1>
+        <!-- -------------------- -->
+        <h1>Filter (0:51:50)</h1>
+        <p> Itt eleg sok egyeb is van, nem csak arnyekolas.</p>
+        <h2 style="
+            filter: drop-shadow(1px 2px 3px rgb(134, 133, 133));
+        "
+        >Filter: drop-shadow(1px 2px 3px rgb(134, 133, 133))</h2>
+        <p>A drop-shadow felepitese kb u.a., viszont a filter egy csomo mast is tud:</p>
 
         <h2 style="
-            filter: blur;
+            filter: blur(1px);
         "
-        >Filter: blur</h2>
+        >filter: blur(1px)</h2>
+
 
         <h2 style="
-            filter: grayscale();
+            filter: blur(0.9px);
         "
-        >Filter: grayscale</h2>
+        >filter: blur(0.9px)</h2>
+        
 
-        <p>Ez itt a filternel fent nem müködik.</p>
+        <h2 style="
+            filter: blur(0.8px);
+        "
+        >filter: blur(0.8px)</h2>
+
+
+        <h2 style="
+            filter: blur(0.7px);
+        "
+        >filter: blur(0.7px)</h2>
 
         <hr>
-        <h1>Cimsor transzformalasa, h arnyek legyen (18:56)</h1>
+        <p>Brigtness: itt lehet transzformalni a szineket. 0: fekete, 0.5: 50%, 1: 100%.</p>
+
+        <h2 style="
+            color: red;
+            filter: brightness(0.5);
+        "
+        >color: red; filter: brightness(0.5);</h2>
+
+
+        <h2 style="
+            color: red;
+            filter: brightness(0.6);
+        "
+        >color: red; filter: brightness(0.6);</h2>
+
+        
+        <h2 style="
+            color: red;
+            filter: brightness(0.7);
+        "
+        >color: red; filter: brightness(0.7);</h2>
+
+
+        <h2 style="
+            color: red;
+            filter: brightness(0.8);
+        "
+        >color: red; filter: brightness(0.8);</h2>
+
+
+        <h2 style="
+            color: red;
+            filter: brightness(0.9);
+        "
+        >color: red; filter: brightness(0.9);</h2>
+
+
+        <h2 style="
+            color: red;
+            filter: brightness(1);
+        "
+        >color: red; filter: brightness(1);</h2>
+
+        <p style=   "font-size: 32px; 
+                    font-style: italic;">
+            "Van meg itt egy csomo minden a filternel, erdemes vele jatszani."        
+        </p>
 
         <hr>
-        <h1>Egyedi betütipusok (18:58)</h1>
+        <!-- -------------------- -->
+        <h1>Cimsor transzformalasa, h arnyek legyen, regi eszközökkel (0:55:00)</h1>
+
+        <p>Ami elöször megfogta Csabit a weboldalak kesziteseben, h 
+            sok-sok evvel ezelött meg nem volt ennyi lehetöseg a szövegek manipulalasara.
+            Ez akkoriban nagyon latvanyos volt.
+            <br>
+            -> 2 cimsort egymasra pakol kicsit elcsusztatva, az egyik
+        </p>
+
+        <h2 style=" margin-bottom: -1.87em;
+                    margin-left: 2px;
+                    color: red;
+                    "
+            >Ez a cimsor</h2>
+        <h2>Ez a cimsor</h2>
+
+        <hr>
+        <!-- -------------------- -->
+        <h1>Egyedi betütipusok (00:57:30)</h1>
+        <h2>Attekintes</h2>
         <p>
+            Betütipusoknal nagyon kicsi közös metszet az operacios rendszerek között.
             Mivel minden operacios rendszer különbözö betütipusokkal dolgozik, 
             ezert nem minden jelenik meg mindegyiknel ugyanugy.
             <br>
-            Erre van egy megoldas: WOFF2 
-            <br>
-            Ezeknel a problema: fel lehet-e hasznalni?
-            Fontos: a betütipus-t le kell tölteni. Ha a weblap mar betöltödött, de a betütipus mege nem, 
-            akkor addig a default betütipust fogja hasznalni.
+            <b>Emiatt elöfordulhat, h nem egyseges a kinezet.</b>
+            <br>        
+            Van erre egy megoldas: A weboldal CSS-e ugy, mint egy kepet, letölt egy betütipus fajlt
+            a felhasznalo szamitogepre. Ez nem lesz rendszerszintü, csak azon a weboldalon fog müködni.
         </p>
 
-        <p style="
-            font-family: 'Egyedi', Verdana, ;
-            ">
-            font-family: 2.-nak olyat berakni, ami hasonlit az 1.-hoz -> ha az 1. nem töltödött be, akkor a 2.-kal sem lesz nagy különbseg
+        <ul>
+            <li>Oprendszerben: <b>TTF</b> (True Type Font), <b>OTF</b> (Open Type Font)</li>
+            <li>Weben: <b>WOFF2</b> (Web Open Font Format -> a 2-es verzio jobban tömöritett, mint az 1-es)</li>
+        </ul>
+
+        <p>
+            Betütipusoknal ez szokott a problema lenni: <b>fel lehet-e hasznalni?</b>
+            Ha egy random letöltött font-file alkalmazunk a sajat weboldalunkon, az nem biztos, h engedelyezett.
+            Vannak olyan licenszek, ahol szerzödest kell alairni es ki kell fizetni.
             <br>
+            Nyilvan, ha csak hobbi-dolgokat csinalunk, nem valoszinü, h a nagy cegek abba invesztalnak 
+            energiat/penzt, h a hobbi-weboldalrol levetessek a betütipust,
+            de ha egy komolyabb (több szazezres felhasznaloju) weboldalnal ott igenis rendben kell lennie
+            a jogi vonatkozasanak. Különben per lehet belöle.
+        </p>
+
+        <p>
+            A betütipust lehet hasznalni mindenfele ikonok elhelyezesere. 
+            "Be vallom öszinten, en is szoktam."
+            Szoval ezek az ikonok teljesen jol elhelyezkedhetnek egy betütipus fajlban.
+            <br>
+            Ennek az <b>elönye, hogy az ikonokat barmekkorara lehet nagyitani</b>, mivel nem kepek,
+            hanem ivekböl allnak. 
+            <br>
+            Hatranya lehet, h csak egyszinü lehet. Az az egy szin, egyebkent majdnem biztos, 
+            h a color-propertyvel megadhato.
+            <br>
+            Pl zoomban ez a 3 ikon:
+        </p>
+        <div style="background-color: grey" >
+            <img src="IkonokMintKarakter.png" style="margin: 10px; ">   
+        </div>
+
+        <p>
+            Ha szint is akarnank mashogy valtoztatni, akkor .svg formatumot javasol.
+        </p>
+
+        <p>
+            Fontos: a betütipus-t le kell tölteni. A weboldal altalaban azonnal bejön,
+            de a betütipus fajljanak letöltese eltarthat sokaig.
+            Ha a weblap mar betöltödött (a szöveg es a tartalom mar ott van), 
+            de a betütipus meg nem, 
+            akkor addig a default betütipust fogja hasznalni.
+            <br>
+            <br>
+            Ehhez meg lehet adni <b>fallback-betütipust</b>.
+        </p>
+
+
+        <h2>Peldak</h2>
+        <h3>Pelda 1</h3>
+        <p>
+            <i>font-family: 'Egyedi', Verdana, ;</i>
+            <br>
+            Ha igy definialjuk a font-familyt (következö bekezdes), akkor 
+            az 'Egyedi' be van allitva elsödleges betütipusnak. Ez viszont nincs letöltve (nem letezik), 
+            igy nincs betöltödve sem.
+            <br>
+            Ilyenkor a 2. helyen levöt (Verdana) fogja hasznalni (fallback).
+        </p>
+        <p style="
+            font-family: 'Egyedi', Verdana ;
+            ">
+            font-family: 2.-nak (fallback) olyat berakni, ami hasonlit az 1.-hoz 
+            -> ha az 1. nem töltödött be, akkor a 2.-kal sem lesz nagy különbseg
+        </p>
+
+
+        <h3>Pelda 2</h3>
+        <p>Itt amit hasznalni fogunk: 
+            <br>
+            <i>font-family: 'Dancing Script';</i>
+            <br>
+            <br>
+            Ehhez a stilushoz a header-ben be kellett tenni egy link taget ezekkel az attributumokkal:
+            <br>
+            href='https://fonts.googleapis.com/css?family=Dancing Script' 
+            <br>
+            rel='stylesheet'
+            <br>
+        </p>
+        <p style="
+            font-family: 'Dancing Script';
+            ">
             Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,            
         </p>
 
-        <p style="
-        font-family: 'Dancing Script';
-        ">
-        Ehhez a stilushoz a header-ben be kellett tenni egy link-et.
-        <br>
-        <br>
-        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,            
-    </p>
+        <h2>GoogleFonts (1:07:00)</h2>
+        <a href="https://fonts.google.com/">GoogleFonts</a>
+        <p>Ha azt szeretnenk, 
+            h a lehetö legkevesebb efforttal egyedi betütipust varazsoljunk a weboldalra.
+            <br>
+            "Nem letölteni akarom, hanem beagyazni."
+            <br>
+            <br>
+            Lenyeg, h ez egy copy-pastelhetö megoldast nyujt arra, 
+            h egyedi betütipusokat, amiket ök tarolnak (es tölük fogja letölteni a felhasznalni)        
+        </p>
 
+        <p>
+            Jellemzöen a GoogleFonts-rol behivatkozott betütipusok szabadon felhasznalhatoak,
+            ök lerendeztek azoknak a licenszes dolgait.
+            <br>
+            Miert eri meg a Google-nek? Mert az összes felhasznalo a sajat latogatasi adatait 
+            el fogja küldeni.
+        </p>
+
+        <h2>Kérdésem a fallback betütipushoz (1:23:30)</h3>
+        <h3>Mit erdemes?</h3>
+        <p>Honnan tudom, h a fallback-betütipusnak beallitott fontot gyorsan be fogja tudni tölteni?</p>
+
+        <p> Valasz: olyat erdemes valasztani, ami az op-rendszerben 
+            (egy 0-installos Windowsban vagy MAC-en) benne van.
+        </p>
+
+        <h3>Van a közös metszetröl nyilvantartas?</h3>
+        <p>Erdemes Google-ben rakeresni, de ennek az a jellegzetessege, h ezek folyamatosan valtoznak,
+            h milyen oprendszerben milyen betütipus van.
+        </p>
+    <!---------------------------->
+    <!---------------------------->
+    <!---------------------------->    
     <br>
     <h1>Link formazasa (19:11, )</h1>
     <p style="
@@ -194,19 +383,44 @@
          Ezt meg megnezni!!
          <br>
          <br>
-         Donec pede justo, <a href="https:\\telex.hu">link text</a> fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,            
+         Donec pede justo, <a href="https:\\telex.hu">link text</a> fringilla vel, 
+         aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, 
+         venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+          Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+          Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
      </p>
 
-     <br>
-     <h1>Print szöveg (19:17)</h1>
+     <h2>:active</h2>
+     <p>Amikor lenyomom a linken a gombot, es meg nem engedem meg fel.</p>
+
+     <h2>:focus</h2>
+
+     <h2>:visited</h2>
      <p>
-        Könyvet is lehet itt irni. 
+        Ha mar meglatogattuk a linket, akkor defaultban kicsit lilás szinü lesz. 
+         Ez erre vonatkozik.
+     </p>
+     
+    <!---------------------------->
+    <!---------------------------->
+    <!---------------------------->    
+     <br>
+     <h1>Print szöveg (1:17:00)</h1>
+     <p>
+        Könyvet is lehet itt irni. Itt arrol van szo, hogy formazzuk ugy, 
+        h PDF-be le lehessen ennek megfelelöen szepen generalni.
         <br>
         Amikor nyomtatashoz keszitjük fel a doksit.
         <br>
         Itt lehet pl öneletrajzot is csinalni, amit szepen ki tudsz nyomtatni!!!
      </p>
+     <a href="https://www.michaelperrin.fr/blog/2019/11/printing-the-web-part-2-html-and-css-for-printing-books">
+        Hasznos link a temahoz
+     </a>
 
+    <!---------------------------->
+    <!---------------------------->
+    <!---------------------------->    
      <br>
      <h1>Specialis karakterek</h1>
      <p>&raquo;</p>
@@ -219,11 +433,8 @@
 
      <p>Ez itt egy nem törhetö space!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;faskdfjasdlfjsdöfj</p>
 
-
      <p>Regen ezekkel lehetett olyan karaktereket beilleszteni, ami nem volt benne a hasznalt karakterkeszletben.</p>
 
-
-     <p></p>
 
     </body>
 </html>

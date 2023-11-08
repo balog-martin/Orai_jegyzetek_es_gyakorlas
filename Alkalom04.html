@@ -340,333 +340,385 @@
             A fentiek a legfontosabb propertyk. Ha statisztikat csinalnek, mik fordulnak elö leggyakrabban,
             minden bizonnyal ez jönne ki.
         </p>
-    </body>
 
-            
-    <!--------------------->
-    <hr>
-    <h1>Mértékegységek (1:10:00)</h1>
-    <h2>Abszolut mertekegysegek</h2>
-    <ul>
-        <li><b>pixel:</b> a kepernyön legtöbbször ezzel fogunk talalkozni</li>
-        <li>Ha nyomtatasra keszitünk mediumot, ott lehet, h nem a pixel lesz a legjobb.
-            Ott a <b>mm</b>, <b>cm</b> esetleg jobb lehet.
-        </li>
-    </ul>
-
-    <h2>Relativ mertekegysegek</h2>
-    <h3>em</h3>
-    <ul>
-        <li><b>em:</b> az "M" betü merete, ami a legszelesebb karakter. 
-            Szoval az a doboz, amibe az M betü belefer, az az 1 em egyseg.
-            Ez relativ, mert ha azt mondjuk, h a betümeret legyen 60px-es,
-            akkor az a doboz lesz 1 em, amibe a 60px-es M betü belefer.
-        </li>
-        <li>
-            Lehet okosan hasznalni, pl ha egy fix betüszelessegnyi helyet akarunk kihagyni, akkor
-            azt mondjuk, h pl 20 em. -> Pl. vmi box-nak a szelessege, amibe adott szamu karakternek el 
-            kell fernie
-        </li>
-    </ul>
-
-    <h3>rem</h3>
-    <ul>
-        <li>"root em a</li>
-        <li>ez a HTML tag maga. Ha ennek pl megadjuk, h 16px, akkor az 1 rem az minden alkalommal
-            pontosan 16 pixel lesz, akarhol hasznaljuk.
-        </li>
-        <li>Nem öröklödik, egy abszolut meret.</li>
-        <li>Szoktak hasznalni pl reszponziv dizajnnal, mert eleg jol kezre tud allni</li>
-        <li>Ezen kivül nehany specialis dologra.</li>
-    </ul>
-
-    <h3>vw, vh</h3>
-    <ul>
-        <li>viewport widt, viewport high (viewport: a lathato terület)</li>
-        <li>menniy pixel all rendelkezes szelessegen es magassagban</li>
-        <li>szoval ez azt adja meg, mekkora területen jelenik meg a böngeszö, amit formazni szeretnek</li>
-        <li>Ha atmeretezem a böngeszöt (pl összehuzom az ablakot), akkor ezek az ertekek valtoznak</li>
-    </ul>
-
-    <h3>Egyeb</h3>
-    <ul>
-        <li>Van kb 15-16 relativ mertekegyseg, a többibe mar nem megyünk bele.</li>
-    </ul>
-
-    <h3>%</h3>
-    <ul>
-        <li>A szülö es a gyerek aranyara vonatkozik</li>
-        <li>Mindig mast lehet, nagyon kell tudni, h hol lehet hasznalni.</li>
-        <li>Ahhoz kepest, h a befogado boxnak mekkora a merete,  </li>
-        <li>Ha hozzaszoktunk, elegge a kezünk ala tud dolgozni.</li>
-    </ul>
-
-           
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <hr>
-    <h1>Ritkan hasznalt specialis dolgok (1:18:00)</h1>
-
-    <!--------------------->   
-    <h2>selector * </h2>
-    <ul>
-        <li>Egy mindent lefedö szelektor</li>
-        <li>.class helyett * -ot irunk, azt jelenti, h az összes letezö html elemre
-            ami a keperny megjelenik, arra legyen az igaz, amit itt megadunk
-        </li>
-    </ul>
-
-    <!--------------------->   
-    <h2>propert "all"</h2>
-    <h3>all: unset</h3>
-    <ul>
-        <li>Nagyon specialis esetben szoktuk hasznalni</li>
-        <li>Mind a 400 CSS property-t 0-ra allitja</li>
-        <li>Pelda: az 1. div es a 2. div ugyanugy vannak formazva
-            , de a 2.-nak a style-jaba az "unset: all" -t hasznaltuk.
-        </li>
-    </ul>
-            
-    <div style="                   
-        border: 3px dotted rgb(181, 36, 36); 
-        width: 150px;
-        padding: 25px; 
-        margin: 35px;
-        background: rgb(204, 139, 139);
-        text-align: center;
-        "           
-    >1. div</div>
-
-    <div style="                   
-        border: 3px dotted rgb(181, 36, 36); 
-        width: 150px;
-        padding: 25px; 
-        margin: 35px;
-        background: rgb(204, 139, 139);
-        text-align: center;
-        all: unset;
-        "           
-    >2. div</div>
-
-    <h3>all: revert</h3>
-    <ul>
-        <li>Akkor erdemes, amikor mar egy nagyon mely struktura melyen vagyunk, es
-            mindenfele szin, betümeret stb alkalmazva van, es en 0-rol szeretnem kezdeni,
-            mert ez egy specialis elem lesz. Szoval nem akarok semmi olyat, ami a szülökre ervenyes.
-        </li>
-    </ul>
-
-    <h3>all: unset</h3>
-    <ul>
-        <li>Kitöröl minden beallitast
-        </li>
-        <li>Nem ertettem, h a reverthez kepest mi a különbseg...</li>
-    </ul>
-
-    <!--------------------->   
-    <h2>!important</h2>
-    <ul>
-        <li>Ha ezt kell alkalmaznunk, valszeg vmit rosszul csinalunk.</li>
-        <li>Jelentese kb: "Akkor is ugy lesz, mert en azt mondtam"</li>
-        <li>Ha 2 elemre is teszek !important, akkor ök fontossagi szempontbol egy szinten vannak.</li>
-        <li>"Jóvanazúgy" -> Ha mar minden kötel szakad, es pl sehogy sem veszi fel azt a szint,
-            amit szeretnenk, akkor lehet ezt. Aztan ha müködik, le kell venni, es ki kell nyomozni, 
-            h miert van a problema.
-        </li>
-    </ul>
-        
-
-     <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <hr>
-    <h1>Különfele szelektorok/modositok (1:24:00)</h1>
-
-    <h2>Egy html tag nevét tesszük CSS-be</h2>
-    <p>Az adott html tag (pl div) nevet tesszük CSS-be ahelyett, 
-        hogy pl. <i>.myclassForSpan{...}</i> -t irnank, amit egyesevel hasznalunk a span-re.</p>
-
-    <style>
-        span{
-            border: 1px solid red;
-            margin: 30px;
-            padding: 5px;
-        }
-    </style>
-
-    <span>1. span </span>
-    <span>2. span </span>
-    <span>3. span </span>
-    <span><button>gomb egy spanben</button></span>
-
-    <!--------------------->
-    <h2>Egy attributum nevevel kezdödik a CSS definicio</h2>
-    <h3>Azonos</h3>
-    <p>
-        Az input elem type attributuma: "text". 
-        Itt kek szint definialtunk, ha elkezdünk irni a szövegdobozba, az kek lesz.
-    </p>
-
-    <style>
-        [type="text"]{
-            color: blue;
-        }
-    </style>
-
-    <div>
-        <button>Gomb</button>
-        <input type="text">
-    </div>
-
-    <h3>Azzal kezdödik, de massal folytatodik</h3>
-    <h4>Pelda 1</h4>
-    <p>
-    </p>
-    <ul>
-        <li>Ez majdnem u.a., mint az elözö.</li>
-        <li>Különbsegek:</li>
+        <!--------------------->
+        <hr>
+        <h1>Mértékegységek (1:10:00)</h1>
+        <h2>Abszolut mertekegysegek</h2>
         <ul>
-            <li>Az input tag type attributuma itt "datetime"</li>
-            <li>A CSS stilusdefinicional viszont csak "date" erteket adtunk meg.</li>
-            <li>= operator helyett ^= operatort hasznaltunk</li>
+            <li><b>pixel:</b> a kepernyön legtöbbször ezzel fogunk talalkozni</li>
+            <li>Ha nyomtatasra keszitünk mediumot, ott lehet, h nem a pixel lesz a legjobb.
+                Ott a <b>mm</b>, <b>cm</b> esetleg jobb lehet.
+            </li>
         </ul>
-        <li>Szoval minden olyan html elemre ervenyesül, aminek a type attributuma "date" 
-            ertekkel <b>kezdödik</b>.
-        </li>
-    </ul>
 
-    <style>
-        [type^="date"]{
-            color: green;
-        }
-    </style>
+        <h2>Relativ mertekegysegek</h2>
+        <h3>em</h3>
+        <ul>
+            <li><b>em:</b> az "M" betü merete, ami a legszelesebb karakter. 
+                Szoval az a doboz, amibe az M betü belefer, az az 1 em egyseg.
+                Ez relativ, mert ha azt mondjuk, h a betümeret legyen 60px-es,
+                akkor az a doboz lesz 1 em, amibe a 60px-es M betü belefer.
+            </li>
+            <li>
+                Lehet okosan hasznalni, pl ha egy fix betüszelessegnyi helyet akarunk kihagyni, akkor
+                azt mondjuk, h pl 20 em. -> Pl. vmi box-nak a szelessege, amibe adott szamu karakternek el 
+                kell fernie
+            </li>
+        </ul>
 
-    <div>
-        <button>Gomb</button>
-        <input type="datetime">
-    </div>
+        <h3>rem</h3>
+        <ul>
+            <li>"root em a</li>
+            <li>ez a HTML tag maga. Ha ennek pl megadjuk, h 16px, akkor az 1 rem az minden alkalommal
+                pontosan 16 pixel lesz, akarhol hasznaljuk.
+            </li>
+            <li>Nem öröklödik, egy abszolut meret.</li>
+            <li>Szoktak hasznalni pl reszponziv dizajnnal, mert eleg jol kezre tud allni</li>
+            <li>Ezen kivül nehany specialis dologra.</li>
+        </ul>
 
-    <h4>Pelda 2</h4>
-    <ul>
-        <li>Elvileg kezdöbetükkel is lehet (nekem nem sikerült itt...)</li>
-        <li>Nem megy melyebben bele, ez mar a CSS-nek a programozas resze. Legalabbis
-            jobban hasonlit a programozasra mint stilusozasra
-        </li>
-    </ul>
+        <h3>vw, vh</h3>
+        <ul>
+            <li>viewport widt, viewport high (viewport: a lathato terület)</li>
+            <li>menniy pixel all rendelkezes szelessegen es magassagban</li>
+            <li>szoval ez azt adja meg, mekkora területen jelenik meg a böngeszö, amit formazni szeretnek</li>
+            <li>Ha atmeretezem a böngeszöt (pl összehuzom az ablakot), akkor ezek az ertekek valtoznak</li>
+        </ul>
 
-    <style>
-        [type="t-v"]{
-            color: orange;
-        }
-    </style>
+        <h3>Egyeb</h3>
+        <ul>
+            <li>Van kb 15-16 relativ mertekegyseg, a többibe mar nem megyünk bele.</li>
+        </ul>
 
-    <div>
-        <button>Gomb</button>
-        <input type="text-valami">
-    </div>
+        <h3>%</h3>
+        <ul>
+            <li>A szülö es a gyerek aranyara vonatkozik</li>
+            <li>Mindig mast lehet, nagyon kell tudni, h hol lehet hasznalni.</li>
+            <li>Ahhoz kepest, h a befogado boxnak mekkora a merete,  </li>
+            <li>Ha hozzaszoktunk, elegge a kezünk ala tud dolgozni.</li>
+        </ul>
 
-    <!--------------------->
-    <!--------------------->
-    <!--------------------->
-    <h2>Relacios jel es html tag neve</h3>
 
-    <!--------------------->
-    <h3>Pelda 1: div alatti div</h3>
-    <p>
-        Pl minden olyan divet, ami egy masik div alatt van, meg tudok stilusozni. Itt a 2. szintü div (div alatti div) hattere szines lesz.
-    </p>
-    <style>
-        div > div {
-            background-color: orange;
-        }
-    </style>
-    <div>
-        <div>div 1</div>
-        <div>div 2</div>
-        <button>gomb</button>
-        <input type="text">   
-        <div>div 2</div>
-    </div>
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <hr>
+        <h1>Ritkan hasznalt specialis dolgok (1:18:00)</h1>
 
-    <!--------------------->
-    <h3>Pelda 2: .a alatti div</h3>
+        <!--------------------->   
+        <h2>selector * </h2>
+        <ul>
+            <li>Egy mindent lefedö szelektor</li>
+            <li>.class helyett * -ot irunk, azt jelenti, h az összes letezö html elemre
+                ami a keperny megjelenik, arra legyen az igaz, amit itt megadunk
+            </li>
+        </ul>
 
-    <style>
-        .a > div {
-            background-color: purple;
-        }
-    </style>
+        <!--------------------->   
+        <h2>propert "all"</h2>
+        <h3>all: unset</h3>
+        <ul>
+            <li>Nagyon specialis esetben szoktuk hasznalni</li>
+            <li>Mind a 400 CSS property-t 0-ra allitja</li>
+            <li>Pelda: az 1. div es a 2. div ugyanugy vannak formazva
+                , de a 2.-nak a style-jaba az "unset: all" -t hasznaltuk.
+            </li>
+        </ul>
 
-    <p>
-        Pl.: 5 egymas alatt beagyazott div gombbal es inputtal, a 3. szintü div stilusa "a", es az ez alatt levöre definialom
-    </p>
-    <p>
-        Megjegyzes: ha a fenti szabalyt (Pelda 1, narancs) kiveszem, akkor az 5. szint is purple lesz, 
-        nemcsak a 4.
-    </p>
+        <div style="                   
+            border: 3px dotted rgb(181, 36, 36); 
+            width: 150px;
+            padding: 25px; 
+            margin: 35px;
+            background: rgb(204, 139, 139);
+            text-align: center;
+            "           
+        >1. div</div>
 
-    <div>div 1. szint
-        <div>div 2. szint
-            <div class="a">div 3. szint, class "a"
-                <div>div 4. szint
-                    <div>div 5. szint
+        <div style="                   
+            border: 3px dotted rgb(181, 36, 36); 
+            width: 150px;
+            padding: 25px; 
+            margin: 35px;
+            background: rgb(204, 139, 139);
+            text-align: center;
+            all: unset;
+            "           
+        >2. div</div>
 
+        <h3>all: revert</h3>
+        <ul>
+            <li>Akkor erdemes, amikor mar egy nagyon mely struktura melyen vagyunk, es
+                mindenfele szin, betümeret stb alkalmazva van, es en 0-rol szeretnem kezdeni,
+                mert ez egy specialis elem lesz. Szoval nem akarok semmi olyat, ami a szülökre ervenyes.
+            </li>
+        </ul>
+
+        <h3>all: unset</h3>
+        <ul>
+            <li>Kitöröl minden beallitast
+            </li>
+            <li>Nem ertettem, h a reverthez kepest mi a különbseg...</li>
+        </ul>
+
+        <!--------------------->   
+        <h2>!important</h2>
+        <ul>
+            <li>Ha ezt kell alkalmaznunk, valszeg vmit rosszul csinalunk.</li>
+            <li>Jelentese kb: "Akkor is ugy lesz, mert en azt mondtam"</li>
+            <li>Ha 2 elemre is teszek !important, akkor ök fontossagi szempontbol egy szinten vannak.</li>
+            <li>"Jóvanazúgy" -> Ha mar minden kötel szakad, es pl sehogy sem veszi fel azt a szint,
+                amit szeretnenk, akkor lehet ezt. Aztan ha müködik, le kell venni, es ki kell nyomozni, 
+                h miert van a problema.
+            </li>
+        </ul>
+
+
+         <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <hr>
+        <h1>Különfele szelektorok/modositok (1:24:00)</h1>
+
+        <h2>Egy html tag nevét tesszük CSS-be</h2>
+        <p>Az adott html tag (pl div) nevet tesszük CSS-be ahelyett, 
+            hogy pl. <i>.myclassForSpan{...}</i> -t irnank, amit egyesevel hasznalunk a span-re.</p>
+
+        <style>
+            span{
+                border: 1px solid red;
+                margin: 30px;
+                padding: 5px;
+            }
+        </style>
+
+        <span>1. span </span>
+        <span>2. span </span>
+        <span>3. span </span>
+        <span><button>gomb egy spanben</button></span>
+
+        <!--------------------->
+        <h2>Egy attributum nevevel kezdödik a CSS definicio</h2>
+        <h3>Azonos</h3>
+        <p>
+            Az input elem type attributuma: "text". 
+            Itt kek szint definialtunk, ha elkezdünk irni a szövegdobozba, az kek lesz.
+        </p>
+
+        <style>
+            [type="text"]{
+                color: blue;
+            }
+        </style>
+
+        <div>
+            <button>Gomb</button>
+            <input type="text">
+        </div>
+
+        <h3>Azzal kezdödik, de massal folytatodik</h3>
+        <h4>Pelda 1</h4>
+        <p>
+        </p>
+        <ul>
+            <li>Ez majdnem u.a., mint az elözö.</li>
+            <li>Különbsegek:</li>
+            <ul>
+                <li>Az input tag type attributuma itt "datetime"</li>
+                <li>A CSS stilusdefinicional viszont csak "date" erteket adtunk meg.</li>
+                <li>= operator helyett ^= operatort hasznaltunk</li>
+            </ul>
+            <li>Szoval minden olyan html elemre ervenyesül, aminek a type attributuma "date" 
+                ertekkel <b>kezdödik</b>.
+            </li>
+        </ul>
+
+        <style>
+            [type^="date"]{
+                color: green;
+            }
+        </style>
+
+        <div>
+            <button>Gomb</button>
+            <input type="datetime">
+        </div>
+
+        <h4>Pelda 2</h4>
+        <ul>
+            <li>Elvileg kezdöbetükkel is lehet (nekem nem sikerült itt...)</li>
+            <li>Nem megy melyebben bele, ez mar a CSS-nek a programozas resze. Legalabbis
+                jobban hasonlit a programozasra mint stilusozasra
+            </li>
+        </ul>
+
+        <style>
+            [type="t-v"]{
+                color: orange;
+            }
+        </style>
+
+        <div>
+            <button>Gomb</button>
+            <input type="text-valami">
+        </div>
+
+        <!--------------------->
+        <!--------------------->
+        <!--------------------->
+        <h2>Relacios jel es html tag neve</h3>
+
+        <!--------------------->
+        <h3>Pelda 1: div alatti div</h3>
+        <p>
+            Pl minden olyan divet, ami egy masik div alatt van, meg tudok stilusozni. Itt a 2. szintü div (div alatti div) hattere szines lesz.
+        </p>
+        <style>
+            div > div {
+                background-color: orange;
+            }
+        </style>
+        <div>
+            <div>div 1</div>
+            <div>div 2</div>
+            <button>gomb</button>
+            <input type="text">   
+            <div>div 2</div>
+        </div>
+
+        <!--------------------->
+        <h3>Pelda 2: .a alatti div</h3>
+
+        <style>
+            .a > div {
+                background-color: purple;
+            }
+        </style>
+
+        <p>
+            Pl.: 5 egymas alatt beagyazott div gombbal es inputtal, a 3. szintü div stilusa "a", es az ez alatt levöre definialom
+        </p>
+        <p>
+            Megjegyzes: ha a fenti szabalyt (Pelda 1, narancs) kiveszem, akkor az 5. szint is purple lesz, 
+            nemcsak a 4.
+        </p>
+
+        <div>div 1. szint
+            <div>div 2. szint
+                <div class="a">div 3. szint, class "a"
+                    <div>div 4. szint
+                        <div>div 5. szint
+
+                        </div>
+                        <button>gomb</button>
+                        <input type="text">  
                     </div>
                     <button>gomb</button>
                     <input type="text">  
                 </div>
                 <button>gomb</button>
-                <input type="text">  
+                <input type="text">   
             </div>
             <button>gomb</button>
             <input type="text">   
         </div>
-        <button>gomb</button>
-        <input type="text">   
-    </div>
 
-    <h3>Pelda 2: .a alatti div</h3>
-    <p>Ezek vannak meg:</p>
-    <ul>
-        <li>+: egymas melletti</li>
-        <li>~ (tilde): </li>
-    </ul>
-    <p>Itt se megyünk jobban bele.</p>
+        <h3>Pelda 2: .a alatti div</h3>
+        <p>Ezek vannak meg:</p>
+        <ul>
+            <li>+: egymas melletti</li>
+            <li>~ (tilde): </li>
+        </ul>
+        <p>Itt se megyünk jobban bele.</p>
 
-    <!--------------->
-    <h2>Style property-ertek parhoz kapcsolva </h2>
-    <h3>button:disabled </h3>
-    <style>
-        button:disabled {
-            color:red;
-        }
-    </style>
+        <!--------------->
+        <h2>Style property-ertek parhoz kapcsolva </h2>
+        <h3>button:disabled </h3>
+        <style>
+            button:disabled {
+                color:red;
+            }
+        </style>
 
-    <div>
-        <button disabled>Gomb 1 (disabled)</button>
-        <button >Gomb 2 (nem disabled)</button>
-    </div>
+        <div>
+            <button disabled>Gomb 1 (disabled)</button>
+            <button >Gomb 2 (nem disabled)</button>
+        </div>
 
-    <h3>input:checked </h3>
-    <p>Itt ennel nem nagyon lehet igy demonstralni (nem is müködik), altalaban egy checkbox bepipalasanal a 
-        mellette levö szöveg szinet szoktuk allitani.
-    </p>
-    <style>
-        input:checked {
-            border:green 2px solid;
-        }
-    </style>
+        <h3>input:checked </h3>
+        <p>Itt ennel nem nagyon lehet igy demonstralni (nem is müködik), altalaban egy checkbox bepipalasanal a 
+            mellette levö szöveg szinet szoktuk allitani.
+        </p>
+        <style>
+            input:checked {
+                border:green 2px solid;
+            }
+        </style>
 
-    <div>
-        <input type="checkbox" >
-    </div>
+        <div>
+            <input type="checkbox" >
+        </div>
 
-    <br>
-    <p>A :: -töl folytatni (1:33:40)</p>
+        <br>
+        <h3>input::after style (1:33:40)</h3>   
 
+        <p>Ezzel az input elemek möge hozza tudunk füzni egy x-et.</p>
+        <p>Pl: Tooltip-nel ha az aljan van egy kis mutogato nyil, h a Tooltip 
+            erre a szövegre vonatkozik, azt jellemzöen igy szoktak megcsinalni.
+        </p>
+        <p>Ha hasznalunk ikonokat a megjeleniteshez, ott is igy szoktak megcsinalni (csak az akkoregy
+            unicode-charakter lesz.
+        </p>
+        <p> Megyjegyzes: nekem csak a checkboxnal jelent meg, viszont </p>
+
+        <style>
+            input::after {
+                content: "x";
+            }
+        </style>
+        <div>
+            <div>div 1</div>
+            <div>div 2</div>
+            <input type="checkbox">
+            <input type="text">   
+            <div>div 2</div>
+        </div>
+
+        <br>
+        <h3>Space selector</h3>   
+        <p>Pl: .x .y {...}</p>
+        <p>Jelentese: Ha az <i>x</i> nevü class alatt barhol a strukturaban (barmennyi szinttel alatta) 
+            van egy <i>y</i> nevü class, akkor arra alkalmazza ezt a stilust.
+        </p>
+
+        <style>
+            .x .y {
+                font-weight: bold ;
+                color: rgb(232, 13, 119);
+            }
+
+        </style>
+
+        <p>Pelda 1: itt alkalmazva lesz a stilus (pink betüszin), plusz az 1. div-szint alatti
+            div-ek hattere is narancs lesz meg egy korabbi style miatt.
+        </p>
+        <div class="x">div 1 (1. szint)
+            <div>div 2 (2. szint)</div>
+            <div>div 3 (2. szint)</div>
+            <div class=""> div 4 (2. szint)
+                <div class="y">div 5 (3. szint), <i>class="y"</i> stilussal a <i>class="x" </i> stilusu div alatt kettö szinttel</div>
+            </div>
+            <div>div 6 (2. szint)</div>
+            <div>div 7 (2. szint)</div>
+            <div class="y">div 8 (2. szint) -> itt is alkalmazva lesz</div>
+            <div>div 9 (2. szint)</div>
+        </div>
+        <div class="y">div 10 (1. szint): ez is <i>class="y"</i> -nal van, de nem a class="x" -szel formazott div 1 alatt</div>
+
+    </body>
 </html>

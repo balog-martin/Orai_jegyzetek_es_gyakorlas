@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>6. alkalom</title>    
+    </head>
+    <style>
+        form{
+            border: 1px solid #666;
+            padding: 12px 16px;
+        }
+        label{ /*18:35*/
+            display: inline-block; 
+            width: 120px;
+            white-space: nowrap;
+            text-align: left;
+        }
+        select{
+            color: red;
+        }
+        
+    </style>
+    <body>
+
+        <!--*************************-->
+        <h1>Form, input, button</h1>
+        <p>Ha a gombnal nem specifikaljuk, h mi legyen, akkor Submit (type) button lesz.
+            Form-on belül van lehetöseg...
+        </p>
+
+        <div>
+            <form action="https://facebook.com/login">
+                <input type="text" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+
+        <p>Mindegyik input mezöt el kell nevezni (id). 
+            Ha nevesitjük, megjelenik az URL-ben ez a 3 mezö nevesitjük (a böngeszöben):</p>
+        <div>
+            <form action="">
+                <input type="text" name="osszeg" id="" >
+                <input type="text" name="megbizo" id="" >
+                <input type="text" name="szamlaszam" id="" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+        <br>
+
+        <div>
+            <form action="">
+                <input type="password" name="jelszo" id="" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+
+        <div>
+            <form action="">
+                <input type="checkbox" name="" id="" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+
+        <div>
+            <form action="">
+                <input type="color" name="" id="" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+        
+        <div>
+            <form action="">
+                <input type="time" name="" id="" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+        <br>
+        <p>Lefontosabb, h tudjatok ezeknek  letezeseröl, mert lehet emelni a felhasznaloi elmenyt.</p>
+
+        <h1>Másfele beviteli lehetösegek</h1>
+
+        <h2>Select (dropdown)</h2>
+        <p>Segitseget nyujt, h hamarabb megtalaljuk, amit keresünk</p>
+
+
+        <h1>Label</h1>
+        <p>Miert fontos? Specialis elem, ami fokuszt tud adni. 
+            Alapbol inline, nem töri meg a szöveget.
+        </p>
+
+        <p>
+            Ha a labelre kattintunk, akkor mar belefokuszal az inputba
+        </p>
+        <div>
+            <form action="">
+                <label for="osszeginput">Összeg:</label>
+                <input type="text" name="osszeg" id="osszeginput" >
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+
+        <p>Szerzödesi feltetelek -> ezt megnezni ujra!!!!</p>
+        <div>
+            <form action="">
+                <label for="osszeginput2">Összeg:</label>
+                <input type="text" name="osszeg" id="osszeginput2" placeholder="Ide ird az összeget." >
+                <br>
+                <label for="megbizoinput">Megbizo:</label>
+                <input type="text" name="osszeg" id="megbizoinput" placeholder="Ide ird a megbizot." >
+                <br>
+                <label for="szamlaszaminput">Szamlaszam:</label>
+                <input type="text" name="osszeg" id="szamlaszaminput" placeholder="Ide ird a szamlaszamot." >
+
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <h1>Form formazasa</h1>
+        <p>Több megoldas is kivankozik. Hova rendezzük a label-öket? (text-align)</p>
+        <ul>
+            <li>egyik iskola: balra igazitva</li>
+            <li>masik iskola: jobbra igazitva, közepen összefut</li>
+            <li>A köritestöl/aktualis dizajntol is függhet, h melyiket.</li>
+            <li>Közepre ne!</li>
+        </ul>
+        <br>
+        <p>Milyen szeles legyen a label (width)? (18:38)</p>
+        <ul>
+            <li>white-space: nowrap ...</li>
+            <li>Tipp: a label a szöveg felett van (display:block)</li>
+        </ul>
+
+        <h1>Select (18:44)</h1>
+        <div>
+            <form action="">
+                <select name="" id="">
+                    <option value="">Opcio 1</option>
+                    <option value="">Opcio 2</option>
+                </select>
+            </form>
+        </div>
+        <p>Az opcio-gombok vmi shadow-buttonban vannak formazva, nem ajanlja, h ezt modositsuk.
+            Viszont van lehetösegünk kikapcsolni: appearance: none
+        </p>
+        <br>
+        <p>A checkbox-nal nem nagyon van lehetöseg arra, h pl a pipa alakjat megvaltoztassuk 
+            piparol vmi masik alakzatra. Mindenfele CSS-es trükkökkel lehet csak meghackelni,
+            de altalaban 5-10 ev mulva mar el szoktak az ilyenek törni.
+        </p>
+
+        <h1>Rejtett mezök</h1>
+        <p>"Fogd meg legyszi"  -> ez nem jelenik meg az URL-ben, de ugyanugy elküldi.</p>
+
+        <p>Robotok spamm-el el tudjak lepni a forumokat. Ennek kivedesere is lehet rejtett mezöt hasznalni:
+            de ez csak egy alapvetö vedelem.     
+        </p>
+
+        <p>
+            Amire gondolt (18:52) (nincs kesz...):
+            Ha egy rejtett mezö ki van töltve, amit ember nem tölthet ki, akkor tudjuk, h az egy robot volt.
+            Jonehany ilyen vedelmi vonalat erdemes felhuzni.
+        </p>
+        <div>
+            <form action="">
+                <label for="osszeginput3">Összeg:</label>
+                <input type="text" name="osszeg" id="osszeginput3" placeholder="Ide ird az összeget." >
+
+                <button type="submit">Elküld</button>
+            </form>
+            <button>Masodik gomb</button>
+        </div>
+
+        <br>
+        <p>Kerdes: az inputok csak formon belül müködnek?
+            Valasz: nem, de igy együtt müködnek. Pl ha a submit gombra nyomunk, akkor az egesz csomag a formon belül el lesz küldve.
+
+        </p>
+        <br>
+        <p>De alapvetöen minden inputnak egy formban kell lennie. Nagyon ritka, amikor nem.</p>
+
+        <br>
+        <p>CSRF: ha vki veletlenül egy linkre kattint, amivel el akarju küldeni </p>
+
+        <br>
+        <p>Több lepeses formok: pl a 4. lepesben az elözö lepesek .........</p>
+
+        <h1>Validáció</h1>
+        <ul>
+            <li>Pl: van-e az e-mailcimben @? -> </li>
+            <li>required: kötelezö lesz kitölteni</li>
+            <li>minlength: erre is jön automatikusan az ertesites, ha nem eleg karaktert irtunk be</li>
+        </ul>
+
+        <form action="">
+            <input type="email" name="email" required minlength="3" maxlength="5">
+            <button>Gomb</button>
+        </form>
+
+        <p>Number: fel-le billentyüvel is lehet menni. Ezen kivül min es max hatart allitottunk be.</p>
+
+        <form action="" onsubmit="return false;" >
+            <input type="number" name="barmi" required max="20" min="5">
+            <button type="submit">Gomb</button>
+        </form>
+
+        <p><b>Programozott validacio:</b> pl ket mezö összege ne lehessen nagyobb, mint x ertek. Ehhez JavaScript kell mar. </p>
+
+        <h1>Események (evets)</h1>
+        <ul>
+            <li>unsubmit: confirm() -> </li>
+        </ul>
+        <form action="" onsubmit="confirm('biztos?')" >
+            <input type="number" name="barmi" required max="20" min="5">
+            <button type="submit">Gomb</button>
+        </form>
+
+        <p>Aposztrof tema: 19:14 körül</p>
+
+
+        <h1>Formok szep formazasa</h1>
+        <form action="" >
+            <div>
+                <label for="osszeginput">Összeg:</label>
+                <input type="text" name="osszeg" id="osszeginput">
+            </div>
+            <div>
+                <label for="megbizoinput">Megbizo:</label>
+                <input type="text" name="megbizo" id="megbizoinput">
+            </div>
+            <div>
+                <label for="szamlaszaminput">Szamlaszam:</label>
+                <input type="text" name="szamlaszam" id="szamlaszaminput">
+            </div>
+            <button type="submit">Elküld</button>
+        </form>
+
+        <p>Itt meg jon egy form > div style CSS-be -> beallit sorközt is</p>
+
+        
+    </body>
+</html>

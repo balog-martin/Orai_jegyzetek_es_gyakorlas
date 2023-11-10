@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>7. alkalom</title>    
+        <style>
+            
+            img {
+                width: 320px;
+                height: 77px;
+                display: block;
+            }
+
+            body{
+                padding: 0;
+                margin:  0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Képek beágyazásának lehetösegei</h1>
+        <p>Alapvetöen 4 tipusu kepet szoktunk nagyon gyakran hasznalni: jpg, png, webp (webpicture), svg</p>
+        <p>png: olyan fotok/grafikak, aminel nem szabad egy pixelt sem tevedni</p>
+        <p>A webp-vel volt sajnos egy biztonsagi problemaja</p>
+        <p>Pegazus: a kepbe be volt agyazva egy szamitogep (döbbenetes mernöki teljesitmeny egyebkent)</p>
+        <p>Hasznalt html-tag: img</p>
+        <p>alt: az img egyik attributuma. Celja: specialis böngeszöknel, felolvasoprogramoknal elmondja, h mi van a kepen.
+
+        </p>
+
+        <h2>Hatterkepkent</h2>
+        <img src="Malev.svg">
+        <img src="Malev_320.png">
+        <img src="Malev_640.png">
+        <img src="Malev_1024.png">
+
+
+        <p>A png nem lesz nagyithato vegtelensegig.</p>
+        <p>Az svg-fajlt meg lehet nyitni html-ben is, latszik a matematikai leirasa.</p>
+        <p>A 640-es png mar sokkal jobb (elesebb)</p>
+
+        <p>Tipp: svg-vel a legjobb (föleg ha nagyitunk), de eredeti meret</p>
+
+        <h2>Hatterkep 2</h2>
+        <p>Ezt meg egyszer atnezni, sok mindent mondott, nem tudtam követni....</p>
+
+        <div style="
+                width: 100vw;
+                height:  200px;
+                background-size: auto 100%;
+                background-image: url(contrast-bubbles-colourful-background.jpg);
+            ">           
+        </div>
+
+        <br>
+          
+        <div style="
+                width: 100vw;
+                height:  200px;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url(contrast-bubbles-colourful-background.jpg);
+            ">           
+        </div>
+
+        <br>
+
+        <p>A következöt (background-image) arra is hasznaljak, h ne tudjak olyan könnyen lementeni a kepet</p>
+        <div style="
+                width: 100vw;
+                height:  200px;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url(contrast-bubbles-colourful-background.jpg);
+            ">           
+        </div>
+
+        <hr>
+        <!-------------------->
+        <h1>Reszponzivitas</h1> 
+        <picture>
+            <img src="Malev_logo.svg.png">
+        </picture>    
+        <p>Ujra megnezni....</p>
+
+
+        <hr>
+        <!-------------------->
+        <h1>Lazy load</h1> 
+        <p>Relativ sok es nagy kepnel hasznos.
+            Azt jelenti, h akkor fogja betölteni, ha a kepernyöre kerül, addig nem.
+            Ez eröforrasok, savszelesseg szempontjabol elönyös.
+        </p>
+        <p>Itt is ujra megnezni.....</p>
+
+        <hr>
+        <!-------------------->
+        <h1>Shadow (18:35)</h1> 
+
+        <hr>
+        <!-------------------->
+        <h1>SVG (18:37)</h1> 
+        <p>Azert alkalmatlan HTML grafikak megjelenitesere, mert minden egy doboz.
+            Pl haromszögetnem lehet. Vagy h vhogy megis, nem lesz jövöallo.
+        </p>
+        <p>
+            Pl: webshop, add meg a rendelesi adataidat ....         
+        </p>
+        <p>
+            Az SVG alapvetöen alakzatokkal dolgozik, es a koordinatakat kell megadni, aztan 
+            ö kitölti. Az SVG a forraskodja az iveknek. -> HTML-ben at tudjuk erni
+            Rendes szerkesztök: Inkscape, Adobe InDesign, 
+        </p>
+        <p>
+            Az SVG kep kitöltöszinet felül tudjuk irni. Ez föleg ikonoknal fontos, amiknek a
+            szinet adott esetben 
+        </p>
+
+
+        <hr>
+        <!-------------------->
+        <h1>Grafikonok (dashboard) (18:50)</h1> 
+        <p>SVG-vel erdemes megjeleniteni öket.
+            Ebben matek van, rengeteg matek.
+            <br>
+            D3: matematikai segedeszköz ehhez. Tipp: www.d3js.org
+            Ez nagyon kenyelmesse teszi a munkat chartokkal.
+            <br>
+            "Ez a kezmüves charting"
+            <br>
+            Elönye: mi rakhatjuk össze. Hatranya: többet kell vele dolgozni.
+        </p>
+
+        <p>
+            GoogleCharts mashogy müködik: 
+            szeretnek egy vonalgrafikont es a GoogleCharts kirajzolja.
+            <br>
+            "Ez a kenyelmes charting"
+            <br>
+            Elönye: csak megadjuk az adatokat meg nehany dolgot.
+            Hatranya: sok alapertelmezett dolgot nem tudunk modositani.
+        </p>
+
+        <hr>
+        <!-------------------->
+        <h1>Canvas (19:00)</h1> 
+        <p>
+            Ad egy vasznat, amire pixelenkent lehet rajzolni.
+            Nem vektorgrafikus dolgokra valo, hanem arra, h sokszor valtozzon. 
+            Arra valo, h nagyon sok grafikai valtozast is megjelenitsen.
+            <br>
+            3D-s dolgokat is lehet itt rajzolni, pl targyakat körbe lehet forgtni.
+            <br>
+            <br>
+            Nagy programokat canvasra rajzolnak
+        </p>
+
+
+        <hr>
+        <!-------------------->
+        <h1>Multimedia (19:10)</h1> 
+        <p>
+            
+        </p>
+
+        <hr>
+        <!-------------------->
+        <h1>Egyéb beagyazhato tartalmak (19:13)</h1> 
+        <p>
+            
+        </p>
+    </body>
+</html>

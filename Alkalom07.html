@@ -11,97 +11,340 @@
                 display: block;
             }
 
-            body{
+            body{ 
                 padding: 0;
                 margin:  0;
+            }
+            span{
+                background-color: yellow;
+            }
+            .hatter {
+                width: 100vw;
+                height: 200px;
+                background-image: url(Backgrounds/beautiful-shot-grassy-hills-covered-trees-near-mountains-dolomites-italy.jpg);
+            }
+            .imgScreenshot{
+                border: 10px black dashed;
+                width: auto;
+                height: auto;
+                margin: 20px;
+                padding: 20px;
+                background-color: gray;
+                margin-bottom: 10cm;
             }
 
         </style>
     </head>
     <body>
+        <!-- *************************************************** -->
         <h1>Képek beágyazásának lehetösegei</h1>
         <p>Alapvetöen 4 tipusu kepet szoktunk nagyon gyakran hasznalni: jpg, png, webp (webpicture), svg</p>
-        <p>png: olyan fotok/grafikak, aminel nem szabad egy pixelt sem tevedni</p>
-        <p>A webp-vel volt sajnos egy biztonsagi problemaja</p>
-        <p>Pegazus: a kepbe be volt agyazva egy szamitogep (döbbenetes mernöki teljesitmeny egyebkent)</p>
-        <p>Hasznalt html-tag: img</p>
-        <p>alt: az img egyik attributuma. Celja: specialis böngeszöknel, felolvasoprogramoknal elmondja, h mi van a kepen.
+        <ul>
+            <li><b>png</b>: olyan fotok/grafikak, aminel nem szabad egy pixelt sem tevedni</li>
+            <li><b>webp</b>: olyasmi mint a png, de elvileg ez hasznal tömöritest (?). Ennek volt sajnos egy biztonsagi problemaja (Pegazus: a kepbe be volt agyazva egy szamitogep (döbbenetes mernöki teljesitmeny egyebkent)</li>
+            <li><b>svg</b>: ezt is rengetegszer agyazzuk be</li>
+        </ul>
 
+        <p>Hasznalt html-tag: img</p>
+
+        <p><b>alt</b> attributum: az img egyik attributuma. Celja: akadalymentesites. Specialis böngeszöknel, felolvasoprogramoknal elmondja, h mi van a kepen. A kepek alapjan leirasokat gyarto algoritmus most az AI ternyerese miatt egyre fontosabb lesz. Ilyenkor nem kell alt-ot kitöltenünk, ha nem akarunk.</p>
+
+       <!-- *************************************************** -->
+        <h2>Összehasonlitas</h2>
+
+        <p><span>Kepeket egymas ala: <i>display: block</i></span></p>
+
+        <div> 320 png:  <img src="Malev_320.png"></div>
+        <hr>
+        <div> 640 png:  <img src="Malev_640.png"></div>
+        <hr>
+        <div> 1024 png: <img src="Malev_1024.png"></div>
+        <hr>
+        <div> svg:      <img src="Malev.svg"></div>
+        <hr>
+
+        <p>Eredeti meretben nincs nagy különbseg.</p>
+        <p>Viszont ha bezoomolunk, akkor latszodik a különbseg. </p>
+
+        <p>A png bar nem veszit a tömörites miatt a minösegeböl, de nem lesz nagyithato a vegtelensegig.</p>
+
+        <!-- *************************************************** -->
+        <h2>SVG</h2>
+
+        <p>A vektoros fajlokat (svg) vegtelensegig lehet nagyitani es eles marad. 
+            Az svg-fajlt meg lehet nyitni html-ben is, latszik a matematikai leirasa.
+        </p>
+        <p>Az SVG formatum valojaban egy XML fajl, meg lehet nyitni, bele lehet szerkeszteni</p>
+        <p>Az SVG XML-jebe be lehet agyazni egy pixeles kepet (pl JPG-t), de ezt ne tegyük!</p>
+        <p>Vannak pici logok nagy meretben -> ezeket SVG-vel lehet legköltseghatekonyabban</p>
+
+        <!-- *************************************************** -->
+        <h2>Body-rol keretet levenni</h2>
+
+        <p><i>body{ 
+                padding: 0;
+                margin:  0;
+                }
+            </i>
         </p>
 
-        <h2>Hatterkepkent</h2>
-        <img src="Malev.svg">
-        <img src="Malev_320.png">
-        <img src="Malev_640.png">
-        <img src="Malev_1024.png">
-
-
-        <p>A png nem lesz nagyithato vegtelensegig.</p>
-        <p>Az svg-fajlt meg lehet nyitni html-ben is, latszik a matematikai leirasa.</p>
-        <p>A 640-es png mar sokkal jobb (elesebb)</p>
-
-        <p>Tipp: svg-vel a legjobb (föleg ha nagyitunk), de eredeti meret</p>
-
-        <h2>Hatterkep 2</h2>
-        <p>Ezt meg egyszer atnezni, sok mindent mondott, nem tudtam követni....</p>
-
-        <div style="
-                width: 100vw;
-                height:  200px;
-                background-size: auto 100%;
-                background-image: url(contrast-bubbles-colourful-background.jpg);
-            ">           
+        <!-- *************************************************** -->
+        <h2>Hatterkep</h2>
+        <div>
+            <p>
+                A <i>background-image: url()</i> CSS property nem arra valo, hogy kepet jelenitsünk meg, hanem hogy egy div-nek vagy barmilyen HTML tag-nek a hatterkepet valtoztassuk meg.
+            </p>
+            <p>
+                SVG-t is beagyazhatunk.
+            </p>
+            <p>Tipp kep letöltesre: <a href="https://www.freepik.com/">Freepik</a></p>    
+        </div>
+        <span>A következö peldaknal a böngeszö szelesseget is erdemes valtoztatni es nezni, mi törtenik!</span>
+        <!-- *************************************************** -->
+        <h2>Hatterkep: background-size</h2>
+        
+        <p>Siman a hatter style:</p>
+        <script src="https://gist.github.com/balog-martin/b02861dd52e38b2a6fd584f37b4e9bb6.js"></script>
+        <p>Ennel a beallitasnal <i>background-size: auto auto;</i> -t hasznal automatikusan</p>
+        <div class="hatter" ></div>
+       
+        <!-- -------------------- -->
+        <hr>
+        <p>hatter-style kiegesztive:<i>background-size: 100% 100%;</i> </p>
+        <p>-> Szét van nyújtva, felveszi a befoglalo div meretet</p>
+        <div class="hatter" 
+             style="background-size: 100% 100%;
+             ">
         </div>
 
-        <br>
-          
-        <div style="
-                width: 100vw;
-                height:  200px;
+        <!-- -------------------- -->
+        <hr>
+        <p>Elözö modositva: <i>background-size: auto 100%;</i></p>
+        <p>Szelesseg auto, magassag 100%.</p>
+        <p>A böngeszö kiszamolja, h ha a div-nek definialt magassagba (200px) a kepet 100%-osan bele akarja rakni,
+           akkor a szelesseget hogy kell aranyositani -> proporcionalisan atmeretezei.
+        </p>
+        <p>A kep ilyenkor ismetlödik, ez alap müködesmodja a background-image CSS propertynek.</p>
+        <div class="hatter" 
+             style="background-size: auto 100%;
+             ">
+        </div>
+
+        <!-- -------------------- -->
+        <h2>Hatterkep: background-size: contain; background-repeat: különbözö erteket;</h2>
+        
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-repeat: no-repeat;</i></p>
+        <p> Csabi altalaban ezt szokta hasznalni.</p>
+        <p> (Itt a background-size erteke contain, kesöbb lesz meg a cover, lasd <a href="#h2BackgroundSize">itt</a>)</p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: no-repeat;
+             ">
+        </div>
+
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-repeat: round;</i></p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: round;
+             ">
+        </div>
+
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-repeat: repeat-x;</i></p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: repeat-x;
+             ">
+        </div>
+        
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-repeat: repeat-y;</i></p>
+        <p> Ehhez nagyon be kell zoomolni, h legyen különbseg</p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: repeat-y;
+             ">
+        </div>
+        <hr>
+        
+        <!-- -------------------- -->
+        <h2>Hatterkep: background-position:</h2>
+        
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-position: center</i></p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+             ">
+        </div>
+
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-position: left center</i></p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: left center;
+             ">
+        </div>
+
+        
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-position: left center</i></p>
+        <p><i>background-size: 200px 100px;</i></p>
+        <p>left: Vizszintesen bal oldalra rendezi. center: Függölegesen közepre rakja.</p>
+        <p>Megjegyzes: maga a div magassaga 200px.</p>
+        <div class="hatter" 
+             style="background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: 200px 100px;
+             ">
+        </div>
+
+
+        <!-- -------------------- -->
+        <hr>
+        <h2 id="h2BackgroundSize">Hatterkep: background-size</h2>
+
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-size: cover;</i></p>
+        <p><span>Ezt ha pl oldal tetejen csinaljuk, akkor ugy meretezi a kepet, h ne maradjon feher resz a divemben.</span></p>  
+        <div  class="hatter" 
+              style="
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
-                background-image: url(contrast-bubbles-colourful-background.jpg);
             ">           
         </div>
 
-        <br>
+        <!-- -------------------- -->
+        <hr>
+        <p><i>background-size: contain;</i></p>
+        <p><span>Ez pedig minden keppen beteszi az egesz kepet (torzitasmentesen) a divembe, 
+            hogy a kepböl minden latszodjon.
+        </span></p>  
 
-        <p>A következöt (background-image) arra is hasznaljak, h ne tudjak olyan könnyen lementeni a kepet</p>
-        <div style="
-                width: 100vw;
-                height:  200px;
+
+        <div  class="hatter" 
+              style="
                 background-size: contain;
                 background-position: center center;
                 background-repeat: no-repeat;
-                background-image: url(contrast-bubbles-colourful-background.jpg);
             ">           
         </div>
 
+        <!-- -------------------- -->
         <hr>
-        <!-------------------->
-        <h1>Reszponzivitas</h1> 
+        <h2>Hatterkep: kepet kepre</h2>
+        <p>0:23:30-nal</p>
+        <!-- -------------------- -->
+        <hr>
+
+
+        <!-- -------------------- -->
+        <h2>Hatterkep: "lopasvedelem"</h2>
+        <p><span>Ha a kepet div-be rakjuk background-image-kent, akkor azt arra is hasznaljak, h ne tudják olyan könnyen lementeni a kepet, mintha img tagben lenne. Igy ugyani, ha a div-re jobbklikk "mentes maskent"-et nyomunk,
+            akkor nem a kepet fogja lementeni, mivel a div-re mutatunk. </span>
+        </p>
+        <p><span>Trükk letölteshez:</span> ahol a kepen be van jelölve jobb klikk -> megnyitas masik tabon -> onnan le lehet tölteni a teljes kepet. </p>
+        <p>Nyilvan nem egy erös vedelem, de sokszor tenyleg csak ezert teszik background-image-be, mert nem szeretnek, h mas emberek ellopkodjak.</p>
+        <img class="imgScreenshot" src="HowToDownloadBackgroundImageOfDiv.png">
+
+
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <hr>
+        <h1>Reszponzivitas (00:24:45)</h1> 
+
+
+        <p>Erre van a picture HTML-tag. Ez egy ujkori talalmany (HTML5), es meg lehet benne adni egy sima img-t.
+            Lenyege, h itt többfele forrast meg lehet adni. Kisebb kijelzökön egy lebutitott kepet fog megjeleniteni, a nagyobb felbontasun pedig egy jobb minösegü kepet fog megjeleniteni.
+        </p>
+        <p>source tag, srcset attributum:ezzel lehet megadni, h hanyfele felbontas van meg ugyanehhez a kephez. Ez azert fontos, mert van pl a mobiltelefon retinakijelzöje, ami akkora felbontasu (vagy meg nagyobb), mint a full-HD monitor kijelzöje, csak a retinakijelzönek nagyon apro a pixelje.</p>
+        <p>Emiatt a retinakijelzön egy 320-es kep eleg homalyosan fog megjelenni.</p>
+        <p> Ha ezt alkalm</p>
+        <br>
+        <br>
+        <p>Teszt: ami itt definialva van, az akkor lesz a kepernyön lathato, ha bezoomolunk es a böngeszö szelesseget manualisan valtoztatjuk. Ha 500px ala kerül, akkor homalyos a kep, ha 500px föle, akkor eles.</p>
         <picture>
-            <img src="Malev_logo.svg.png">
-        </picture>    
-        <p>Ujra megnezni....</p>
+            <source srcset="Malev_1024.png" media="(min-width: 500px)">
+            <img src="Malev_320.png">
+        </picture>
 
 
         <hr>
-        <!-------------------->
-        <h1>Lazy load</h1> 
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->        
+        <h1>Lazy load (0:29:40)</h1> 
         <p>Relativ sok es nagy kepnel hasznos.
-            Azt jelenti, h akkor fogja betölteni, ha a kepernyöre kerül, addig nem.
+            Azt jelenti, h akkor fogja csak betölteni, ha a kepernyöre kerül, addig nem.
             Ez eröforrasok, savszelesseg szempontjabol elönyös.
         </p>
-        <p>Itt is ujra megnezni.....</p>
+        <p>Local host-on (helyi szamitogep) nem lehetett demonstralni, mert tudja a böngeszö, h annak nincs költsege, h innen betöltse</p>
+        <p>Lenyeg, h itt a <span><i>loading="lazy"</i> attributomot kell hasznalni a nagyobb fajlokra</span></p>
 
-        <hr>
-        <!-------------------->
-        <h1>Shadow (18:35)</h1> 
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_320.png" >
+        <img src="Malev_1024.png" loading="lazy">
+        <img src="Malev_640.png" loading="lazy">
 
+        <p>Ezt a <span>DevTools -> Network </span> fülön lehet majd nezni, h mekkora savszelesseget hasznalt.</p>
+        <img class="imgScreenshot" src="DevToolsNetworkLazyLoad.PNG">
+
+        <p>Hasznalhato <b>iframre</b>-re es <b>video</b>-ra is -> a videokat sem kezdi el becashelni egeszen addig,
+        amig oda nem ertünk. iframe-nel hasonlo a helyzet, erröl meg majd beszel.</p>
+
+        <p><span>Fontos: az img tag-nek legyen fix a merete (width, height)! Különben megeszi az eröforrasokat. Miutan a böngeszö betöltötte a kepeket, es pl a 600.-nal tartunk, utana amit meg nem töltött le, kiszamol vmit (???), rendereli -> csomo mindent eltol scrollozas közben, ami nagyon eröforrasigenyes.
+            Pl ha atscrollozunk 3-4-5 kepen, a böngeszö egyesevel betölti öket es egyesevel lökögeti az alatta levöket lefele. Az eröforras problema mellett nem is jo elmeny.
+        </span></p>
+
+        <p>Az eröforrasigeny megjelenik pl abban, h a mobil gyorsabban fog lemerülni.</p>
+
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
         <hr>
-        <!-------------------->
+        <h1>Shadow (0:35:00)</h1> 
+        <p>Attributumok: </p>
+        <ul>
+            <li><i>box-shadow: </i></li>
+            <li><i>filter: drop-shadow() </i></li>
+        </ul>
+
+        <p><span>Innen folytatni!!!</span></p>
+
+
+
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <!-- ******************************************************************* -->
+        <hr>
         <h1>SVG (18:37)</h1> 
         <p>Azert alkalmatlan HTML grafikak megjelenitesere, mert minden egy doboz.
             Pl haromszögetnem lehet. Vagy h vhogy megis, nem lesz jövöallo.

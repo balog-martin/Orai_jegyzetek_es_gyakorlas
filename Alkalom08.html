@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>8. alkalom</title>    
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>Anchor</h1>
+        <p>Appearance : none: pl gombrol leveszi az összes formazast, a default-ot is.</p>
+        
+        <h1>Belsö navigacio</h1>
+        <p>Amig a href #-gel kezdödik, mindig az adott oldalon belül keresi az id-t.</p>
+        <p>Ha a href "/"-vel kezdödik, akkor mindig az aktualis domainrol indul. </p>
+        <p>Ha a href "/" nelkül (es # nelkül) kezdödik, akkor mindig az aktualis poziciobol. 
+            (Videot megnezni, 18:18)</p>
+
+        <h1>Külsö navigacio</h1>    
+        <p>URL vs URI: "nem nagyon tudnek olyan helyzetet, ahol nem lehetne felcserelve hasznalni.
+            Eleg keplekeny a meghatarozasa is.
+        </p>
+
+        <p>
+            mailto: egy olyan peldaja az URL-nek, ahol nincs //.
+        </p>
+        <p>
+            ftp:// file transfer protocol
+        </p>
+        <p>
+            tel: 
+        </p>
+        <p>
+            saját:// lehet barmilyen sajat semat definialni, de sajat operacios rendszer....
+        </p>
+
+        <h1>Linkek specialis szelektorai (18:29)</h1>
+        <style>
+            a{
+                display: block;
+            }
+            a:link{
+                color: gray;
+            }
+        </style>
+        <a href="#a">Elsö link</a>
+        <a href="b.html">Masodik link</a>
+
+        <p>ToDo: visited, any-link, focus, active (amig le van nyomva), 
+            hover (amikor föle visszük az egeret) </p>
+        <p>
+            Ha billentyüzettel akarunk navigalni, akkor Tab-bal es ... van ra lehetöseg
+        </p>
+
+        <h1>Menük megvalositasai (18:38)</h1>
+        <h2>Dropdown menü</h2>
+        <p>JS nelkül kicsit limitalt. Ettöl függetlenül azt szokta javasolni, h JS nelkül 
+            müködjön a weboldal. Felolvaso programnak is jobb, ha igy van.
+        </p>
+        <p>
+            Fel lehet okositani (progressive enhancment). Ha vannak extrak, a mar meglevö,
+            müködö dolgokat felextrazzuk, h meg jobb legyen.
+        </p>
+
+        <h2>Oldalmenü (sidebar)</h2>
+        <p>
+            Oldalmenü (sidebar): 90 fokkal elfolgatott valtozata a sima listanak. Ki lehet nyitni,
+            es ugy is lehet hagyni.
+        </p>
+
+        <h2>Lebegü menü (Floating)</h2>
+        <p>Amik scrollozas ellenere mindig ott maradnak (pl ikon arra, h megosszuk FB-n, stb)</p>
+        <p>Kapcsolatfelvetelre is jo.</p>
+        <p>(?) A sima felsö menüt is lehet ilyennek csinalni, viszont akkor ...</p>
+
+        <h1>History API (18:48)</h1>
+        <a href="#a2">Elsö link</a>
+        <a href="b.html">Masodik link</a>
+
+        <p>Console -ba Chrome-ban lehet irni pl: history.go(10) -> 10 lepes elöre (lehet -szal vissza is)</p>
+        <p>history.length: + es - iranyba összesen minden lepes.</p>
+        <p>history.pushState() -> elönye: nem tölti ujra az oldalt, megis megvaltoztatja az URL-t.
+            A single-page oldalak is igy müködnek.
+        </p>
+        <p>history.replaceState(): ha ilyet lattok, meneküljetek. Ott akar tartani az oldalon, pedig mennel.
+            Nagyon dark... (?)
+        </p>
+
+        <h1>Single Page Application (SPA) (18:55)</h1>
+        <p>Ha egy webszerveren lennenk, es beirnank a az index.html möge pl h /akarmi/sziasztok,
+            akkor szimulalni tudok belsö navigaciot anelkül, h az oldal ujra lenne töltve.
+            Nem navigalnak sehova, megis atirjak az URL-t. -> lehet, h nem az az oldal jelenik meg,
+            amit mutat. Az URL es a tartalom szet tud kapcsolodni. Ez sokszor problema.
+            Sokszor van pl, h ha egy linket küldünk, akkor az masnal nem az jelenik meg, ami nalunk.
+            Vannak Framework-ok, amik ezt szinkronba hozzak/tartjak (?). 
+        </p>
+        <p>
+            Miert van igy megeröszakolva a history API?
+            Olyan weboldalak, ahol mindenfele grafikonok vannak kirajzolva, ahhoz rengeteg adat kell.
+            Ilyenkor elesen elvalasztjak az oldalt az adattol (föleg, ha dinamikusan valtozik a grafikon).
+            Elöször letölti az oldal vázát. 
+            ...
+            
+        </p>
+
+        <p>
+            Offline müködes: a weboldal kerete ott van, mert le van mar töltve.           
+        </p>
+
+        <h1>Peldak (19:05)</h1>
+        <h2>Sima lista (nav bar)</h2>
+        <p>Szünet a menüpontok között: ott van pedig nem irtunk neki semmi style-t.
+            Ez attol függ, h van-e ott szünet, h az anchor-tageket  szünet/enter nelkül 
+            irtuk-e. H igen, 
+        </p>
+
+        <h2>Floating menü (19:21)</h2>
+    </body>
+</html>

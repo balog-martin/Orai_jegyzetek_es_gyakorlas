@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14. alkalom - JavaScript, Objektumok</title>    
+        <script>
+            const bongeszo = {
+                nev: "chrome",
+                verzio: 118,
+                indit: () => {
+                    return 20;
+                }
+            }
+
+            console.log(bongeszo.nev);
+            console.log(bongeszo['nev']);
+            console.log(bongeszo.indit());
+            
+            console.log('A hasOwnProperty() jol fog jönni kesöbb, ahol objektumokkal fogunk dolgozni.');
+            console.log('Van neki nev?', bongeszo.hasOwnProperty('nev'));
+            console.log('Van neki verzio?', bongeszo.hasOwnProperty('verzio'));
+            console.log('Van neki gyarto?', bongeszo.hasOwnProperty('gyarto'));
+            console.log('Van neki indit?', bongeszo.hasOwnProperty('indit'));
+            console.log('Van neki leallit?', bongeszo.hasOwnProperty('leallit'));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

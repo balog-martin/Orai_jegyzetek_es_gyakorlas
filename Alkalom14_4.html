@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14. alkalom - JavaScript, Objektum-müveltetök</title>    
+        <script>
+            const bongeszo = {
+                nev: "chrome",
+                verzio: 118,
+                indit: () => {
+                    return 20;
+                }
+            }
+
+            console.log('***** Object.entries');
+            console.log('Egy tömbbe konvertalja az objektum összes kulcsat. Ez is nagyon hasznos lesz majd kesöbb!')
+            console.log(Object.entries(bongeszo));
+
+            console.log('***** Object.keys');
+            console.log(Object.keys(bongeszo));
+
+            console.log('***** Object.values');
+            console.log(Object.values(bongeszo));
+
+            console.log('Az objektum metodusat ezen keresztül is meg tudjuk hivni.')
+            console.log(Object.values(bongeszo)[2]());
+
+            bongeszo.nev = 'firefox';
+            console.log(bongeszo.nev);
+
+            console.log('Fontos! Az objektum nem valtozott (const), de az objektum erteke igen.\n' + 
+                        'Fontos külünbseg, azert hangsulyozom ennyire, mert annak idejen ebbe en is sokszor belefutottam.');
+
+            console.log('***** Object.freeze');
+            Object.freeze(bongeszo);
+            bongeszo.nev = 'brave';
+            console.log(bongeszo.nev);
+            console.log('Nem valtoztatta meg a bongeszo nevet, mert le van fagyasztva!');
+            console.log('Neha szükseg van erre, a funkcionalis programozasnal pl kifejezetten jol jön es nem tudjuk pl veletlenül felülirni.')
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

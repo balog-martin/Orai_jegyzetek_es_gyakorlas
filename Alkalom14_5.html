@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14. alkalom - JavaScript, Objektum-müveltetök</title>    
+        <script>
+            const bongeszo = {
+                nev: "chrome",
+                verzio: 118,
+                adat: {
+                    a: 1,
+                    b: 2,
+                },
+                indit: () => {
+                    return 20;
+                }
+            }
+
+            console.log('***** Amikor egy masik valtozonak ugyanazt az objektumot megadom, mint ertek, ',
+                        'akkor nem 2 lesz belöle, tovabbra is 1 objektumom van. Csak ket valtozoban el. ',
+                        'Mindket valtozo ugyanarra az objektumra mutat. Pelda:')
+            
+            const masik = bongeszo;
+
+            console.log(bongeszo.nev);
+            console.log(masik.nev);
+
+            bongeszo.nev = 'firefox';
+
+            console.log(bongeszo.nev);
+            console.log(masik.nev);
+
+
+
+            //**************************************************
+            console.log('***** Object.assign(): ezzel lehet a fenti dolgot "kiküszöbölni".');
+            console.log('Ebben az esetben ugymond lemasoljuk az objektum tartalmat es egy masik objektumhoz rendeljuk hozza. Szoval itt mar 2 objektum van.');
+
+            const masik2 = Object.assign({}, bongeszo);
+
+            console.log(bongeszo.nev);
+            console.log(masik2.nev);
+
+            bongeszo.nev = 'chrome';
+
+            console.log(bongeszo.nev);
+            console.log(masik2.nev);
+
+            console.log('Az assign-rol erdemes megjegyezni, h nem tul alapos. Ugy hivajak, h shallow-clone',
+                        'Csak az 1. szintü objektumok kulcsait fogja lemasolni.',
+                        '\n Szoval csak egy szinten klonoz!!!',
+                        'Ha pl. az adat.a (2. szint) erteket megvaltoztatjuk az egyik objektumban, az a masikban is megvaltozik. ',
+                        'Ez egy olyan jellegzetesseg, amivel tisztaban kell lenni.',
+                        'Ha a 2. szintü ertekeket is külön-külön akarjuk kezelni, azt csak sokkal komplexebb logikaval lehet lemasolni',
+                        'De vannak erre segedkonyvtarak is. -> deepClone', 
+                        'Ez bar');
+             
+            masik.adat.a = 15;            
+
+            console.log(bongeszo);
+            console.log(masik2);            
+
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14. alkalom - JavaScript</title>    
+        <script>
+            const arr = [4, 5];
+
+            console.log(arr);
+            console.log(arr.length);
+
+            console.log("***** Pelda push"); // hozzaad egy elemet a tömb vegehez
+            arr.push(9);
+            console.log(arr);
+            console.log(arr.length);
+
+            console.log("***** Pelda push 2"); 
+            arr.push(15, 16, 17, [20, 21, 22]);
+            console.log(arr);
+            console.log(arr.length);
+            
+            console.log("***** Pelda pop"); // kiolvassa es eltavolitja az utolso elemet a tömb vegerol
+            const c = arr.pop();
+            console.log(c);
+            console.log(arr);
+            console.log(arr.length);
+
+            console.log("***** Pelda pop 2");
+            const d = arr.pop();
+            console.log(d);
+            console.log(arr);
+            console.log(arr.length);
+
+            console.log("***** Pelda shift: nem a tömb vegeröl, hanem a tömb elejeröl vesz ki egy elemet.");
+            console.log(arr);
+            const e = arr.shift();
+            console.log(e);
+            console.log(arr);
+
+            console.log("***** Pelda unshift: belerak a tömbbe 1 v több elemet a tömb elejere");
+            console.log(arr);
+            arr.unshift(1, 2, 3);
+            console.log(arr);
+
+            console.log("***** Pelda sort(): itt alapvetöen minden erteket stringge konvertal es ugy rendezi sorba." + 
+                        "Ez is egy olyan dolog, amiert lehet utalni a JS-et. (Ezert van 1 utan 11)");
+            const arr2 = [3, 7, 4, 13, 12, 11, 2, 1, 9, 5];
+            console.log(arr2);
+            arr2.sort();
+            console.log(arr2);
+
+            console.log("***** Pelda sort() 2: feltetelt adunk meg a sorbarendezeshez (lambda)");
+            arr2.sort((a,b) => a > b ? 1 : -1);
+            console.log(arr2);
+
+            console.log("***** Pelda sort() 3: forditott sorrend");
+            arr2.sort((a,b) => a > b ? -1 : 1);
+            console.log(arr2);
+
+            console.log("***** Pelda filter(): itt is lambdat alkalmazunk." +
+                        "Itt fontos, h bele kell tölteni az eredmenyt egy uj tömbbe!");
+            const arr3 = arr2.filter((elem) => elem > 5);
+            console.log(arr3);
+
+            console.log("***** Pelda forEach(): ugyanaz a signature-je, mint a filter-nek ");   
+            arr2.forEach((elem) => {
+                if(elem > 5) {
+                    console.log(elem);
+                }
+            });        
+
+            console.log("***** Pelda map(): a forEach() alternativaja. Különbseg a forEachhez kepest: "
+                        + "Egyesevel manipulal a tömbön: kivesz -> manipulal -> visszaadja a tömbnek."
+                        + "Az eredeti tömb elemeit nem befolyasolja, itt is bele kell tölteni az eredmenyt egy uj tömbbe.");             
+            console.log(arr2);
+            const arr4 = arr2.map((elem) => {
+                return elem * 2;
+            });     
+            console.log(arr4);
+
+            console.log("***** Pelda reduce(): vegig megy a tömb minden elemen, viszont nem egyesevel manipulal"
+                        + "Mi tudjuk megmondani, h a manipulacio celja mi legyen.");
+            console.log("Itt a lambda masabb. \naccumulator: gyüjti az elözö ertekek eredmenyet."
+                        + "\ncurrentValue: az aktualis eleme a tömbnek."
+                        + "\nKezdöertek a lambdaban: ez az accumulator kezdöerteke. Itt nullat adunk meg az egyszerüseg kedveert."
+                        + "\nreturn: az akkumulator kezdöerteke a köv. elem eseteben.");
+            console.log("A pelda itt összegzi a tömb összes elemet.")
+            const osszeg = arr2.reduce((acc, elem) => {
+                const eredmeny = acc + elem;
+                return eredmeny;
+            }, 0)
+            console.log("Összeg: " + osszeg);
+
+            console.log("Hol szoktuk ezt hasznalni? Leginkabb összeadasnal.")
+
+            console.log("Megjegyezni: ha van x mennyisegü elemünk egy tömbben es pont ennyi is kell vissza."
+                        + "Ha pedig kevesebb elem kell vissza mint az x, akkor a reduce-t hasznaljuk.");
+            console.log("reduce-ban a const-ot felül lehet irni");   
+            
+            
+            console.log("***** Pelda slice(): kivesz egy range-et a tömbböl");
+            console.log("Az end-index mar nem lesz benne! ");
+
+            const arr5 = arr2.slice(2, 4);
+            console.log(arr2);
+            console.log(arr5);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
